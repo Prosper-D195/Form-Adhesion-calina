@@ -8,4 +8,8 @@ Projet d'entraînement **intermediaire HTML et CSS** : mise en pratique de la va
 
 Apprendre à utiliser :
 
-- Les attributs de validation HTML5 : 
+- Les attributs de validation HTML5 : `requierd` , `type` , `pattern` , `minlength` , `maxlength` .
+- Les pseudo-classes CSS : `valid` , `invalid` , `focus` , `focus-visible` , `placeholder-shown` .
+- Les sélecteurs d'attributs et combinateurs pour styliser les messages d'erreur .
+- L'accessibilité de base avec  `aria-describedby` et `aria-invalid` .
+ 
