@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Calina IPB9</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="Images/logo.svg" alt="Logo Cultivateurs Papaye Calina" class="logo-photo">
+                <span class="logo-text">Calina IPB9</span>
+            </div>
+            
+            <div class="credits">
+                Photo par <a href="#" target="_blank">Halie West</a> sur <a href="#" target="_blank">Unsplash</a>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <section class="intro-text">
+                <p class="main-paragraph">Rejoins la communauté des cultivateurs de Papaye Calina IPB9 !</p>
+                <p class="main-paragraph">Tu sais que ce réseau peut t’aider à réussir ta plantation, avoir les bonnes techniques et vendre au bon prix. Inscris-toi maintenant pour démarrer.</p>
+                <p class="sub-paragraph">Tu sais que c’est ce qu’il te faut.</p>
+            </section>
+
+            <section class="form-section">
+                <h2>On y va !</h2>
+                
+                <form action="#" method="POST" novalidate>
+                    <div class="form-grid">
+                        
+                        <div class="form-group">
+                            <label for="first_name">PRÉNOM</label>
+                            <input type="text" id="first_name" name="first_name" placeholder="Ex: Thor" required minlength="2">
+                            <span class="error-message">Le prénom doit contenir au moins 2 caractères.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last_name">NOM</label>
+                            <input type="text" id="last_name" name="last_name" placeholder="Ex: Odinson" required minlength="2">
+                            <span class="error-message">Le nom doit contenir au moins 2 caractères.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+                            <span class="error-message">Veuillez entrer une adresse e-mail valide.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">NUMÉRO DE TÉLÉPHONE</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ex: 0102030405" pattern="[0-9]{8,15}">
+                            <span class="error-message">Le numéro doit contenir entre 8 et 15 chiffres.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">MOT DE PASSE</label>
+                            <input type="password" id="password" name="password" placeholder=" " required minlength="6" aria-describedby="pwd-hint">
+                            <span class="error-message" id="pwd-hint">Le mot de passe doit contenir au moins 6 caractères.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password">CONFIRMER LE MOT DE PASSE</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder=" " required>
+                            <span class="error-message">Veuillez confirmer votre mot de passe.</span>
+                        </div>
+                    </div>
+
+                    <div class="action-area">
+                        <button type="submit" class="btn-submit">Créer le compte</button>
+                        <p class="login-link">Vous avez déjà un compte ? <a href="#">Connexion</a></p>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('blur', () => {
+                if (!input.checkValidity()) {
+                    input.setAttribute('aria-invalid', 'true');
+                } else {
+                    input.setAttribute('aria-invalid', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

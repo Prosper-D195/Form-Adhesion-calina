@@ -1,0 +1,265 @@
+/* --- RESET ET CONFIGURATION GLOBALE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- PANNEAU LATÉRAL GAUCHE --- */
+.sidebar {
+    flex: 0 0 35%;
+    position: relative;
+    
+    /* **[ACTION]** : Photo arrière plan */
+    background-image: url('Images/fond.svg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+/* Conteneur du Logo */
+.logo-container {
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20%;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    border-radius: 8px; 
+}
+
+/* Contrôle de la photo du logo */
+.logo-photo {
+    width: 60px; 
+    height: 60px;
+    object-fit: contain; 
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* Zone des crédits en bas */
+.credits {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.credits a {
+    color: #ffffff;
+}
+
+/* --- ZONE DE CONTENU À DROITE --- */
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fdfdfd;
+}
+
+/* 1. Zone d'introduction (Texte d'accroche) */
+.intro-text {
+    padding: 60px 80px 40px 80px;
+    background-color: #f4f6f8;
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,0.02);
+}
+
+.intro-text .main-paragraph {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 850px;
+    color: #2d3748;
+}
+
+.intro-text .sub-paragraph {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+/* 2. Zone du Formulaire */
+.form-section {
+    padding: 40px 80px;
+}
+
+.form-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #596e4d;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 40px;
+    max-width: 800px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* --- ETATS DE VALIDATION ET STYLES --- */
+.form-group input:focus,
+.form-group input:focus-visible {
+    border-color: #596e4d;
+    box-shadow: 0 0 0 4px rgba(89, 110, 77, 0.15);
+}
+
+.form-group .error-message {
+    font-size: 0.75rem;
+    color: #e53e3e;
+    margin-top: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+.form-group input:not(:placeholder-shown):not(:focus):invalid {
+    border-color: #e53e3e;
+    background-color: #fffaf0;
+}
+
+.form-group input:not(:placeholder-shown):not(:focus):invalid + .error-message {
+    display: block;
+}
+
+.form-group input:not(:placeholder-shown):not(:focus):valid {
+    border-color: #38a169;
+}
+
+/* 3. Zone d'action boutons */
+.action-area {
+    padding: 40px 80px;
+}
+
+.btn-submit {
+    background-color: #596e4d;
+    color: white;
+    border: none;
+    padding: 14px 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(89, 110, 77, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #45563c;
+}
+
+.login-link {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.login-link a {
+    color: #596e4d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .sidebar {
+        flex: 0 0 30%;
+    }
+    .intro-text, .form-section, .action-area {
+        padding: 40px;
+    }
+    .logo-text {
+        font-size: 1.6rem;
+    }
+    .logo-photo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        flex: 0 0 auto;
+        padding: 30px 20px;
+        min-height: 200px; /* Conserve l'espace pour l'image de fond sur mobile */
+    }
+
+    .logo-container {
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .intro-text, .form-section, .action-area {
+        padding: 30px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
